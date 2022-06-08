@@ -12,7 +12,7 @@ body{
 .header-wrapper{
     height: 100vh;
     width: 100%;
-    background: linear-gradient(-45deg, gray, rgb(158, 101, 101), lightsalmon, yellow);
+    background: linear-gradient(-45deg, rgb(74, 103, 136), rgb(55, 173, 197), rgb(21, 119, 149), rgb(5, 86, 102));
     background-size: 400% 400%;
     display: flex;
     flex-direction: column;
@@ -177,7 +177,7 @@ a:hover{
 
 #toggle:checked + .checkbox .trace:nth-child(1) {
     transform: rotate(45deg);
-    background-color: rgb(158, 101, 101);
+    background-color:  rgb(21, 119, 149);
     top: 47px;
 }
 
@@ -191,7 +191,7 @@ a:hover{
 #toggle:checked + .checkbox .trace:nth-child(3) {
     transform: rotate(-45deg);
     top: 48px;
-    background-color: rgb(158, 101, 101);
+    background-color:  rgb(21, 119, 149);
 }
 /*criado a bolha do menu */
 
@@ -308,19 +308,22 @@ a:hover{
 
 
 
-/*Aula 1*/
+/*Cards*/
 .container{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    margin: 3rem 0;
 }
 
 .card{
-    height: 400px;
-    width: 500px;
-    background-image: url('./Imagens/logo.jpg');
+    height: 300px;
+    width: 400px;
+    margin: 3rem 0 0 0;
+    background-image: url('./Imagens/eu.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -328,10 +331,38 @@ a:hover{
     justify-content: center;
     align-items: center;
     filter: grayscale(0.5);
-    color: rgb(10, 10, 10);
+    color: rgb(221, 231, 240);
     cursor: pointer;
     transition: 0.3s;
 
+}
+
+@keyframes float{
+	0%,100%{
+		box-shadow:0 5px 15px 0 rgba(0,0,0,.6);
+		transform:translatey(0)
+	}
+	50%{
+		box-shadow:0 25px 15px 0 rgba(0,0,0,.2);
+		transform:translatey(-20px)
+	}
+}
+.card {
+     animation: float 6s ease-in-out infinite;
+}
+
+.card-text{
+    width: 40%;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: rgb(109, 109, 109);
+}
+
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
 }
 
 .card-wrapper{
@@ -359,7 +390,7 @@ a:hover{
     text-transform: uppercase;
     letter-spacing: 4px;
     margin: 0;
-    transition: 00.3s;
+    transition: 0.3s;
 }
 
 .card-wrapper p{
@@ -376,8 +407,8 @@ a:hover{
 }
 
 .card:hover > .card-wrapper::before{
-    height: 300px;
-    width: 400px;
+    height: 250px;
+    width: 350px;
     opacity: 1;
 }
 
@@ -387,3 +418,51 @@ a:hover{
     font-size: 14px;
 }
 
+/*footer*/
+
+.footer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(21, 119, 149);
+
+}
+
+/*responsivo*/
+
+@media (800px) 
+    
+{}
+@media (max-width: 800px) {
+
+    .social-media{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container{
+        margin-top: 0;
+    }
+    .card-container{
+        flex-direction: column;
+    }
+    .card .card-container:nth-child(1),
+    .card .card-container:nth-child(3){
+        flex-direction: column-reverse;
+    }
+    .card{
+        height: 250px;
+        width: 250px;
+    }
+    .card-text{
+        width: 90%;
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .card:hover > .card-wrapper::before{
+        height: 190px;
+        width: 19;
+    }
+}
