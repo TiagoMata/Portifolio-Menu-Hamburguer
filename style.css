@@ -421,6 +421,7 @@ a:hover{
 /*footer*/
 
 .footer{
+   
     height: 100px;
     width: 100%;
     display: flex;
@@ -432,9 +433,9 @@ a:hover{
 
 /*responsivo*/
 
-@media (800px) 
+
     
-{}
+
 @media (max-width: 800px) {
 
     .social-media{
